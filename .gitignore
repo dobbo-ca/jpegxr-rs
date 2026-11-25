@@ -1,0 +1,5 @@
+/target
+/tests/fuzz/target
+/tests/fuzz/artifacts
+/tests/fuzz/corpus
+/corpus

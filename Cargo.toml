@@ -1,0 +1,18 @@
+[package]
+name = "jpegxr"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.99"
+license = "Apache-2.0"
+description = "Pure Rust JPEG XR (ITU-T T.832) decoder for Zeiss CZI tiles. Rust port of dobbo-ca/jpegxr-go."
+publish = false
+
+# Optimised even for `cargo test`, which has overflow checks on: the conformance streams run in it.
+[profile.dev]
+opt-level = 2
+
+[profile.release]
+codegen-units = 1
+
+[dependencies]
+rayon = "=1.12.0"

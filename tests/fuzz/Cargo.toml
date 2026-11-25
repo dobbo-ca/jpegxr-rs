@@ -1,0 +1,71 @@
+[package]
+name = "jpegxr-fuzz"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+jpegxr = { path = "../.." }
+
+# Not part of the root package: only this crate may depend on libfuzzer-sys.
+[workspace]
+
+[[bin]]
+name = "decode"
+path = "fuzz_targets/decode.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "decode_config"
+path = "fuzz_targets/decode_config.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "decode_component"
+path = "fuzz_targets/decode_component.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "decoder"
+path = "fuzz_targets/decoder.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "idct_pairs"
+path = "fuzz_targets/idct_pairs.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "post_split"
+path = "fuzz_targets/post_split.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "out_bgr8"
+path = "fuzz_targets/out_bgr8.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "out_gray16"
+path = "fuzz_targets/out_gray16.rs"
+test = false
+doc = false
+bench = false
